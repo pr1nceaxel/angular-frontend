@@ -1,59 +1,61 @@
-# AssignmentApp
+# Assignment App (Angular 20)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.16.
+Front du mini-projet : liste / détail / ajout (stepper) / édition (admin), authentification JWT, Angular Material.
 
-## Development server
+## Prérequis
 
-To start a local development server, run:
+- Node.js 18+
+- L’API Node du dossier `../back-end` en cours d’exécution (ou l’URL de l’API déployée).
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Installation
 
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Développement
+
+1. Démarrez l’API (port **8010** par défaut), avec un `.env` valide côté back-end.
+2. Lancez le front :
 
 ```bash
-ng generate --help
+npm start
 ```
 
-## Building
+Ouvrez `http://localhost:4200/`. Connectez-vous avec les comptes créés par `npm run seed:users` dans le back-end (`user` / `admin`, mot de passe `demo123`).
 
-To build the project run:
+## Configuration de l’URL de l’API
+
+- **Développement** : [src/environments/environment.ts](src/environments/environment.ts) — `apiUrl: 'http://localhost:8010/api'`.
+- **Production** : [src/environments/environment.prod.ts](src/environments/environment.prod.ts) — remplacez `https://VOTRE-API.onrender.com/api` par l’URL réelle de votre API déployée. Le build production remplace automatiquement l’environnement via `angular.json` (`fileReplacements`).
+
+## Build production
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Sortie : `dist/assignment-app/browser/` — c’est ce dossier à publier en **site statique** (Render Static Site, Vercel, Netlify, etc.).
 
-## Running unit tests
+### Render (Static Site)
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- **Build command** : `npm install && npm run build` (ou `ng build` si CLI global).
+- **Publish directory** : `dist/assignment-app/browser`
+- Définissez si besoin une variable d’environnement **avant** le build si vous utilisez un script qui injecte l’URL API ; sinon modifiez `environment.prod.ts` avant de pousser sur Git.
 
-```bash
-ng test
-```
+## Fonctionnalités principales
 
-## Running end-to-end tests
+- Connexion JWT stockée dans `localStorage` (clés `assignment_token` / `assignment_user`).
+- Routes protégées par `authGuard` ; édition par `adminGuard` (rôle admin uniquement).
+- Liste paginée, détail avec images, ajout en **stepper**, confirmation avant suppression (admin).
 
-For end-to-end (e2e) testing, run:
+## Ce que le correcteur doit faire sur sa machine
 
-```bash
-ng e2e
-```
+1. Cloner le dépôt, `npm install`.
+2. Cloner / lancer le back-end (voir `../back-end/README.md`), créer `.env`, lancer `npm run seed:users`, importer les données Mockaroo si besoin.
+3. Vérifier que `environment.ts` pointe vers l’API locale.
+4. `npm start` et se connecter avec `user` ou `admin`.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+*Complétez avec : noms du binôme, contributions respectives, lien vidéo YouTube, URLs GitHub / démo Render.*

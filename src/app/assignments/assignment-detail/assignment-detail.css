@@ -1,0 +1,55 @@
+.center {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.detail-card {
+  margin: 1rem auto;
+  max-width: 800px;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.media figure {
+  margin: 0 0 1rem;
+}
+
+.media img {
+  max-width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.media .avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.facts dt {
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.facts dd {
+  margin: 0.25rem 0 0;
+}
+
+.avatar.sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}

@@ -1,0 +1,51 @@
+@if (loading()) {
+  <div class="center"><mat-spinner diameter="40" /></div>
+} @else if (assignment(); as a) {
+  <mat-card class="detail-card">
+    <mat-card-header>
+      <mat-card-title>{{ a.nom }}</mat-card-title>
+      <mat-card-subtitle>{{ a.subject }} — échéance {{ a.dateDeRendu | date: 'fullDate' }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="grid">
+      <section class="media">
+        @if (a.subjectImageUrl) {
+          <figure>
+            <figcaption>Matière</figcaption>
+            <img [src]="a.subjectImageUrl" alt="" />
+          </figure>
+        }
+        @if (a.teacherPhotoUrl) {
+          <figure>
+            <figcaption>Professeur : {{ a.teacherName }}</figcaption>
+            <img [src]="a.teacherPhotoUrl" alt="" class="avatar" />
+          </figure>
+        }
+      </section>
+      <dl class="facts">
+        <dt>Auteur</dt>
+        <dd>
+          @if (a.authorPhoto) {
+            <img [src]="a.authorPhoto" alt="" class="avatar sm" />
+          }
+          {{ a.authorName || '—' }}
+        </dd>
+        <dt>Rendu</dt>
+        <dd>{{ a.rendu ? 'Oui' : 'Non' }}</dd>
+        <dt>Note</dt>
+        <dd>
+          {{ a.grade !== null && a.grade !== undefined ? a.grade + '/20' : 'Non noté' }}
+        </dd>
+        <dt>Remarques</dt>
+        <dd>{{ a.remarks || '—' }}</dd>
+      </dl>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <a mat-button routerLink="/assignments">Retour liste</a>
+      @if (auth.isAdmin()) {
+        <a mat-flat-button color="primary" [routerLink]="['/assignments', a._id, 'edit']">
+          Modifier
+        </a>
+      }
+    </mat-card-actions>
+  </mat-card>
+}
