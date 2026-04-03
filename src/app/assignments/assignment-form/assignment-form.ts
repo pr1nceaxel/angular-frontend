@@ -79,10 +79,14 @@ export class AssignmentFormComponent implements OnInit {
       this.loading.set(true);
       this.service.getById(this.assignmentId).subscribe({
         next: (a) => {
-          const sub = findSubjectByLabel(a.subject);
+          const sub = findSubjectByLabel(a.subject ?? '');
+          const dateStr =
+            typeof a.dateDeRendu === 'string'
+              ? a.dateDeRendu.slice(0, 10)
+              : new Date(a.dateDeRendu).toISOString().slice(0, 10);
           this.editForm.patchValue({
             nom: a.nom,
-            dateDeRendu: a.dateDeRendu.slice(0, 10),
+            dateDeRendu: dateStr,
             authorName: a.authorName,
             authorPhoto: a.authorPhoto,
             subjectKey: sub?.id ?? '',

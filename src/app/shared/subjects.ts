@@ -46,5 +46,6 @@ export const SUBJECT_OPTIONS: SubjectOption[] = [
 ];
 
 export function findSubjectByLabel(label: string): SubjectOption | undefined {
-  return SUBJECT_OPTIONS.find((s) => s.label === label);
+  const t = label.trim().toLowerCase();
+  return SUBJECT_OPTIONS.find((s) => s.label.toLowerCase() === t);
 }

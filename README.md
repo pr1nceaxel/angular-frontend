@@ -59,3 +59,5 @@ Sortie : `dist/assignment-app/browser/` — c’est ce dossier à publier en **s
 ---
 
 *Complétez avec : noms du binôme, contributions respectives, lien vidéo YouTube, URLs GitHub / démo Render.*
+# angular-frontend
+Projet final du cour d'angular
