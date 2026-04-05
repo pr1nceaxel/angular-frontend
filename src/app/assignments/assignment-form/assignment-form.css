@@ -1,0 +1,41 @@
+.form-card {
+  margin: 0 auto;
+  max-width: 580px;
+  position: relative;
+}
+
+.form-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #7c3aed, #db2777);
+  border-radius: 1rem 1rem 0 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.full {
+  width: 100%;
+  display: block;
+}
+
+.row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.hint {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin: 0 0 0.5rem;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}

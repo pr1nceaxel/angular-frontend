@@ -1,0 +1,39 @@
+.login-wrap {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  border-radius: 1.125rem !important;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -12px rgba(91, 33, 182, 0.35) !important;
+}
+
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #7c3aed, #c026d3, #ec4899);
+  z-index: 1;
+}
+
+.full {
+  width: 100%;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.hint {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}

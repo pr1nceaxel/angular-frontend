@@ -1,0 +1,65 @@
+.center {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.detail-card {
+  margin: 0 auto;
+  max-width: 820px;
+}
+
+.detail-card .mat-mdc-card-header {
+  border-bottom: 1px solid rgba(124, 58, 237, 0.12);
+  margin-bottom: 0.5rem;
+  padding-bottom: 1rem !important;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.media figure {
+  margin: 0 0 1rem;
+}
+
+.media img {
+  max-width: 100%;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.media .avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(167, 139, 250, 0.5);
+  box-shadow: 0 8px 20px rgba(91, 33, 182, 0.2);
+}
+
+.facts dt {
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.facts dd {
+  margin: 0.25rem 0 0;
+}
+
+.avatar.sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}

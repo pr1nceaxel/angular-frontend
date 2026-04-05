@@ -1,0 +1,101 @@
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0 1rem;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.12);
+  background: linear-gradient(105deg, #5b21b6 0%, #7c3aed 38%, #a855f7 100%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.brand-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+  padding: 0.35rem 0;
+}
+
+.brand {
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.03em;
+}
+
+.tagline {
+  font-size: 0.7rem;
+  font-weight: 500;
+  opacity: 0.88;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.user-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 0.25rem;
+  padding: 0.25rem 0.65rem 0.25rem 0.85rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.user-name {
+  font-size: 0.85rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.role-chip {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #6b21a8;
+}
+
+.role-chip--admin {
+  background: linear-gradient(135deg, #fce7f3, #fdf2f8);
+  color: #9d174d;
+  box-shadow: 0 0 0 1px rgba(244, 114, 182, 0.4);
+}
+
+.logout-btn {
+  color: #fff !important;
+}
+
+.login-btn {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.55) !important;
+}
+
+.main {
+  min-height: calc(100vh - 64px);
+  padding: 1rem 1rem 2rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .user-pill {
+    flex-wrap: wrap;
+    max-width: 42vw;
+  }
+
+  .user-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+}
