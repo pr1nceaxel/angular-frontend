@@ -1,13 +1,19 @@
 <mat-toolbar color="primary" class="toolbar">
-  <a routerLink="/assignments" class="brand">{{ title }}</a>
+  <div class="brand-block">
+    <a routerLink="/assignments" class="brand">{{ title }}</a>
+    <span class="tagline">Suivez vos rendus</span>
+  </div>
   <span class="spacer"></span>
   @if (auth.isLoggedIn()) {
-    <span class="user-label">{{ auth.user()?.login }} ({{ auth.user()?.role }})</span>
-    <button mat-icon-button type="button" (click)="auth.logout()" aria-label="Déconnexion">
+    <span class="user-pill">
+      <span class="user-name">{{ auth.user()?.login }}</span>
+      <span class="role-chip" [class.role-chip--admin]="auth.isAdmin()">{{ auth.user()?.role }}</span>
+    </span>
+    <button mat-icon-button type="button" (click)="auth.logout()" aria-label="Déconnexion" class="logout-btn">
       <mat-icon>logout</mat-icon>
     </button>
   } @else {
-    <button mat-button type="button" (click)="goLogin()">Connexion</button>
+    <button mat-stroked-button type="button" (click)="goLogin()" class="login-btn">Connexion</button>
   }
 </mat-toolbar>
 <main class="main">

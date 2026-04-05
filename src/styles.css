@@ -1,4 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --app-font-display: 'DM Sans', Roboto, system-ui, sans-serif;
+  --app-gradient-mesh: radial-gradient(at 20% 20%, rgba(139, 92, 246, 0.22) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(244, 114, 182, 0.18) 0px, transparent 45%),
+    radial-gradient(at 40% 80%, rgba(56, 189, 248, 0.12) 0px, transparent 45%),
+    linear-gradient(165deg, #f8fafc 0%, #e8e9f6 45%, #f1f0ff 100%);
+  --app-card-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 12px 24px -4px rgba(91, 33, 182, 0.08);
+  --app-card-border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--app-font-display);
+  background: var(--app-gradient-mesh);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Cartes Material : relief un peu plus marqué (hors overlay snack/dialog si possible) */
+app-root .main mat-card.mat-mdc-card {
+  border-radius: 1rem !important;
+  box-shadow: var(--app-card-shadow) !important;
+  border: var(--app-card-border);
+  overflow: hidden;
+}
+
+app-root .main mat-card.mat-mdc-card .mat-mdc-card-header {
+  padding-top: 1.25rem;
+}
+
+app-root .main .mat-mdc-card-title {
+  font-family: var(--app-font-display) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+}
+
+app-root .main .mat-mdc-card-subtitle {
+  opacity: 0.88;
+}
+
+/* Table : lignes un peu plus aérées */
+app-root .main .mat-mdc-row:hover {
+  background-color: rgba(139, 92, 246, 0.04);
+}
+
+/* Stepper : étapes plus lisibles */
+app-root .mat-step-header .mat-step-label {
+  font-family: var(--app-font-display);
+  font-weight: 500;
+}
+
+/* Boutons primaires : léger arrondi */
+app-root .mat-mdc-unelevated-button.mat-primary,
+app-root .mat-mdc-raised-button.mat-primary {
+  border-radius: 9999px !important;
+  padding: 0 1.25rem !important;
+}
+
+app-root .main a[mat-flat-button] {
+  border-radius: 9999px !important;
+}
+
+/* Liens du router dans la toolbar */
+app-root .toolbar a.brand {
+  font-family: var(--app-font-display);
+  letter-spacing: -0.03em;
+}

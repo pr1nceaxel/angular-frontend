@@ -15,7 +15,7 @@ export class App {
   private readonly router = inject(Router);
   readonly auth = inject(AuthService);
 
-  readonly title = 'Devoirs';
+  readonly title = 'StudyBoard';
 
   goLogin(): void {
     void this.router.navigate(['/login']);

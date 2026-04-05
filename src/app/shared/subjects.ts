@@ -1,4 +1,7 @@
-/** Matières fixes : image + prof associés (côté UI ; le back stocke les champs texte/URL). */
+/**
+ * Matières fixes : image + prof associés (côté UI ; le back stocke les champs texte/URL).
+ * Miroir back-end : ../back-end/config/subjectsCatalog.js (à garder aligné pour seed:bulk et normalisation API).
+ */
 export interface SubjectOption {
   id: string;
   label: string;
