@@ -21,7 +21,7 @@ Les deux membres ont pu se coordonner sur les **contrats d’API** (URLs, champs
 
 - Dépôt GitHub **front** : git@github.com:pr1nceaxel/angular-frontend.git
 - Dépôt GitHub **back** : git@github.com:pr1nceaxel/angular-backend.git
-- Application déployée (Render, Vercel, etc.) : 
+- Application déployée : 
 - Vidéo de démo YouTube (≤ 2 min) : 
 
 ---
