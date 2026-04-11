@@ -22,7 +22,7 @@ Les deux membres ont pu se coordonner sur les **contrats d’API** (URLs, champs
 - Dépôt GitHub **front** : git@github.com:pr1nceaxel/angular-frontend.git
 - Dépôt GitHub **back** : git@github.com:pr1nceaxel/angular-backend.git
 - Application déployée : https://angular-frontend-7fkd.onrender.com/login
-- Vidéo de démo YouTube : 
+- Vidéo de démo YouTube : https://youtu.be/M9_bfsk5XvY
 
 ---
 
@@ -37,8 +37,8 @@ Les deux membres ont pu se coordonner sur les **contrats d’API** (URLs, champs
 ## Installation
 
 ```bash
-git clone <URL-du-depot-front>
-cd assignment-app
+git clone git@github.com:pr1nceaxel/angular-frontend.git
+cd angular-frontend
 npm install
 ```
 
